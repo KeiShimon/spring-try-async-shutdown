@@ -20,7 +20,7 @@ public class RetryConfig {
     retryPolicy.setMaxAttempts(3);
     retryTemplate.setRetryPolicy(retryPolicy);
 
-    retryTemplate.registerListener(new MyRetryListener());
+    retryTemplate.registerListener(new ShortTaskExceptionListener());
 
     return retryTemplate;
   }
@@ -37,7 +37,7 @@ public class RetryConfig {
     retryPolicy.setMaxAttempts(3);
     retryTemplate.setRetryPolicy(retryPolicy);
 
-    retryTemplate.registerListener(new MyRetryListener());
+    retryTemplate.registerListener(new ShortTaskExceptionListener());
 
     return retryTemplate;
   }
